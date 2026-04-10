@@ -21,6 +21,7 @@ docs_build
 site_build
 venv
 docs.zip
+.venv
 archive.zip
 
 # vim temporary files
