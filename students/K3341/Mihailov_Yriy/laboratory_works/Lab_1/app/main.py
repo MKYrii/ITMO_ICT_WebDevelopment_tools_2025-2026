@@ -1,3 +1,11 @@
+import sys
+from pathlib import Path
+
+# Project root (Lab_1): fixes "No module named 'app'" when CWD or PyCharm run config differs
+_root = Path(__file__).resolve().parent.parent
+if str(_root) not in sys.path:
+    sys.path.insert(0, str(_root))
+
 from fastapi import FastAPI
 
 from app.api.assignments import router as assignments_router
