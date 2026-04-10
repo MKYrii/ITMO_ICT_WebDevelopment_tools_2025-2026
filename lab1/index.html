@@ -1,0 +1,1115 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Отчет по практикам и лабораторным работам">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Тайм-менеджер - ITMO Web Development Tools Reports</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href=".." title="ITMO Web Development Tools Reports" class="md-header__button md-logo" aria-label="ITMO Web Development Tools Reports" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ITMO Web Development Tools Reports
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тайм-менеджер
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ITMO Web Development Tools Reports" class="md-nav__button md-logo" aria-label="ITMO Web Development Tools Reports" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    ITMO Web Development Tools Reports
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Лабораторная работа №1
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа №1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Тайм-менеджер
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Тайм-менеджер
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практические работы 1.1-1.3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Практические работы 1.1-1.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практика 1.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практика 1.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практика 1.3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Лабораторная работа 1 (задание на 15 баллов)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Лабораторная работа 1 (задание на 15 баллов)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Используемый стек
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Модели
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение критериев по структуре БД
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение к БД
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pydantic-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pydantic-схемы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pydantic-схемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовые перечисления
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-" class="md-nav__link">
+    <span class="md-ellipsis">
+      User-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tag-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usertaskassignment-" class="md-nav__link">
+    <span class="md-ellipsis">
+      UserTaskAssignment-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasktag-" class="md-nav__link">
+    <span class="md-ellipsis">
+      TaskTag-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особенности реализации
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      API эндпоинты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API эндпоинты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasktags" class="md-nav__link">
+    <span class="md-ellipsis">
+      TaskTags (связь задач и тегов)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assignments (назначение пользователей на задачи)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Реализация требований на 15 баллов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Миграции и окружение
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вывод
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практические работы 1.1-1.3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Практические работы 1.1-1.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практика 1.1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практика 1.2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      Практика 1.3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Лабораторная работа 1 (задание на 15 баллов)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Лабораторная работа 1 (задание на 15 баллов)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Используемый стек
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Модели
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Модели">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Выполнение критериев по структуре БД
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Подключение к БД
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pydantic-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pydantic-схемы
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pydantic-схемы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Базовые перечисления
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-" class="md-nav__link">
+    <span class="md-ellipsis">
+      User-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tag-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usertaskassignment-" class="md-nav__link">
+    <span class="md-ellipsis">
+      UserTaskAssignment-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasktag-" class="md-nav__link">
+    <span class="md-ellipsis">
+      TaskTag-схемы
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Особенности реализации
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      API эндпоинты
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API эндпоинты">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Users
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tasktags" class="md-nav__link">
+    <span class="md-ellipsis">
+      TaskTags (связь задач и тегов)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assignments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assignments (назначение пользователей на задачи)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Реализация требований на 15 баллов
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Миграции и окружение
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Вывод
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1">Отчет по практикам и лабораторной работе 1</h1>
+<p>Выполнил: Михайлов Юрий, К3341  </p>
+<hr />
+<ul>
+<li>Пулл-реквест: <em>https://github.com/TonikX/ITMO_ICT_WebDevelopment_tools_2025-2026/pull/23</em></li>
+</ul>
+<hr />
+<h2 id="11-13">Практические работы 1.1-1.3</h2>
+<h3 id="11">Практика 1.1</h3>
+<ul>
+<li>Пошагово реализованы проект и методы, описанные в практике</li>
+<li>Созданы для временной базы данных модели и API для профессий</li>
+</ul>
+<h3 id="12">Практика 1.2</h3>
+<ul>
+<li>Пошагово реализованы проект и методы, описанные в практике</li>
+<li>Созданы API и модели для умений воинов и их ассоциативной сущности, вложено отображать умения при запросе воина</li>
+</ul>
+<h3 id="13">Практика 1.3</h3>
+<ul>
+<li>Реализованы все улучшения:</li>
+<li>Добавлены <code>alembic.ini</code> и <code>migrations/*</code>.</li>
+<li>Настроено чтение <code>DB_URL</code> из <code>.env</code>.</li>
+<li>Добавлены <code>.env.example</code> и <code>.gitignore</code> с исключением env-файлов.</li>
+</ul>
+<hr />
+<h2 id="1-15">Лабораторная работа 1 (задание на 15 баллов)</h2>
+<h3 id="_1">Используемый стек</h3>
+<ul>
+<li>FastAPI</li>
+<li>SQLModel</li>
+<li>SQLite</li>
+<li>Alembic</li>
+<li>JWT (PyJWT)</li>
+<li>Хэширование паролей</li>
+</ul>
+<h3 id="_2">Модели</h3>
+<p>Файл: <code>app/models.py</code></p>
+<ul>
+<li><code>User</code></li>
+<li><code>Task</code></li>
+<li><code>Tag</code></li>
+<li><code>UserTaskAssignment</code> (ассоциативная сущность User ↔ Task)</li>
+<li><code>TaskTag</code> (ассоциативная сущность Task ↔ Tag)</li>
+</ul>
+<p>Также используются Enum типы:
+- <code>TaskPriority</code> (low, medium, high)
+- <code>TaskStatus</code> (todo, in_progress, done)</p>
+<h4 id="_3">Выполнение критериев по структуре БД</h4>
+<ul>
+<li>Таблиц: <strong>5</strong> (требование: 5+).</li>
+<li><code>one-to-many</code>: <code>User → Task</code> (владелец задачи).</li>
+<li><code>many-to-many</code>: <code>User ↔ Task</code> через <code>UserTaskAssignment</code>.</li>
+<li><code>many-to-many</code>: <code>Task ↔ Tag</code> через <code>TaskTag</code>.</li>
+<li>Ассоциативная сущность <code>UserTaskAssignment</code> содержит поле связи <code>comment</code> (кроме FK).</li>
+<li>Ассоциативная сущность <code>TaskTag</code> содержит поле связи <code>is_primary</code> (кроме FK).</li>
+</ul>
+<hr />
+<h2 id="_4">Подключение к БД</h2>
+<p>Файл: <code>app/db.py</code></p>
+<pre><code class="language-python">from sqlmodel import SQLModel, Session, create_engine
+from app.core.config import DB_URL
+
+engine = create_engine(DB_URL, echo=True)
+
+def init_db() -&gt; None:
+    SQLModel.metadata.create_all(engine)
+
+def get_session():
+    with Session(engine) as session:
+        yield session
+</code></pre>
+<h2 id="pydantic-">Pydantic-схемы</h2>
+<p>Файл: <code>app/schemas.py</code></p>
+<p>Все схемы разделены по функциональному признаку и используют наследование для избежания дублирования кода.</p>
+<h3 id="_5">Базовые перечисления</h3>
+<ul>
+<li><code>TaskStatus</code> (todo, in_progress, done)</li>
+<li><code>TaskPriority</code> (low, medium, high)</li>
+</ul>
+<h3 id="user-">User-схемы</h3>
+<ul>
+<li><code>UserBase</code> — базовые поля (email, full_name)</li>
+<li><code>UserCreate</code> — регистрация (наследует UserBase + password)</li>
+<li><code>UserRead</code> — ответ сервера (добавляет id, is_active, created_at)</li>
+<li><code>UserUpdate</code> — обновление данных (все поля опциональны)</li>
+<li><code>PasswordChange</code> — смена пароля (old_password, new_password)</li>
+<li><code>LoginRequest</code> — вход в систему (username, password)</li>
+<li><code>TokenResponse</code> — JWT токен (access_token, token_type)</li>
+</ul>
+<h3 id="tag-">Tag-схемы</h3>
+<ul>
+<li><code>TagBase</code> — базовые поля (name, color)</li>
+<li><code>TagCreate</code> — создание тега</li>
+<li><code>TagResponse</code> — ответ с id</li>
+<li><code>TagUpdate</code> — обновление (опциональные поля)</li>
+</ul>
+<h3 id="task-">Task-схемы</h3>
+<ul>
+<li><code>TaskBase</code> — базовые поля задачи (title, description, deadline, priority, status, estimated_minutes, recurrence_rule)</li>
+<li><code>TaskCreate</code> — создание задачи (наследует TaskBase)</li>
+<li><code>TaskUpdate</code> — обновление (все поля опциональны)</li>
+<li><code>TaskResponse</code> — ответ с id, owner_user_id, created_at</li>
+<li><code>TaskListResponse</code> — пагинированный список задач (tasks + total)</li>
+</ul>
+<h3 id="usertaskassignment-">UserTaskAssignment-схемы</h3>
+<ul>
+<li><code>TaskAssignmentCreate</code> — назначение пользователя (task_id, user_id, comment)</li>
+<li><code>TaskAssignmentResponse</code> — ответ с id, assigned_at и связанными данными</li>
+</ul>
+<h3 id="tasktag-">TaskTag-схемы</h3>
+<ul>
+<li><code>TaskTagCreate</code> — привязка тега к задаче (task_id, tag_id, is_primary)</li>
+<li><code>TaskTagResponse</code> — ответ с информацией о связи и вложенным объектом тега</li>
+</ul>
+<h3 id="_6">Особенности реализации</h3>
+<ul>
+<li>Использован <code>from_attributes = True</code> для совместимости с SQLModel (режим ORM).</li>
+<li>Применен <code>model_rebuild()</code> для разрешения циклических ссылок между <code>TaskResponse</code> и <code>UserResponse</code>.</li>
+<li>Все enum-поля типизированы соответствующими перечислениями из models.py.</li>
+<li>Опциональные поля помечены <code>Optional</code> с дефолтным значением <code>None</code>.</li>
+</ul>
+<hr />
+<h2 id="api">API эндпоинты</h2>
+<h3 id="users">Users</h3>
+<ul>
+<li><code>POST /users/register</code> — регистрация пользователя.</li>
+<li><code>GET /users/me</code> — данные текущего пользователя.</li>
+<li><code>GET /users/</code> — список всех пользователей.</li>
+<li><code>GET /users/{user_id}</code> — получить пользователя по ID.</li>
+<li><code>PATCH /users/{user_id}</code> — обновить данные пользователя.</li>
+<li><code>PATCH /users/change-password</code> — смена пароля.</li>
+</ul>
+<h3 id="tasks">Tasks</h3>
+<ul>
+<li><code>POST /tasks/</code> — создать задачу.</li>
+<li><code>GET /tasks/</code> — список задач текущего пользователя (с фильтрацией по статусу и приоритету).</li>
+<li><code>GET /tasks/{task_id}</code> — получить задачу.</li>
+<li><code>PATCH /tasks/{task_id}</code> — обновить задачу.</li>
+<li><code>DELETE /tasks/{task_id}</code> — удалить задачу.</li>
+</ul>
+<h3 id="tags">Tags</h3>
+<ul>
+<li><code>POST /tags/</code> — создать тег.</li>
+<li><code>GET /tags/</code> — список всех тегов.</li>
+<li><code>GET /tags/{tag_id}</code> — получить тег.</li>
+<li><code>PATCH /tags/{tag_id}</code> — обновить тег.</li>
+<li><code>DELETE /tags/{tag_id}</code> — удалить тег.</li>
+</ul>
+<h3 id="tasktags">TaskTags (связь задач и тегов)</h3>
+<ul>
+<li><code>POST /task-tags/</code> — привязать тег к задаче (с флагом <code>is_primary</code>).</li>
+<li><code>GET /task-tags/task/{task_id}</code> — получить все теги задачи.</li>
+<li><code>GET /task-tags/tag/{tag_id}</code> — получить все задачи с указанным тегом.</li>
+<li><code>DELETE /task-tags/{task_id}/{tag_id}</code> — отвязать тег от задачи.</li>
+</ul>
+<h3 id="assignments">Assignments (назначение пользователей на задачи)</h3>
+<ul>
+<li><code>POST /assignments/</code> — назначить пользователя на задачу (с комментарием).</li>
+<li><code>GET /assignments/task/{task_id}</code> — получить всех назначенных на задачу пользователей.</li>
+<li><code>GET /assignments/user/{user_id}</code> — получить все задачи, назначенные пользователю.</li>
+<li><code>DELETE /assignments/{task_id}/{user_id}</code> — снять назначение пользователя с задачи.</li>
+</ul>
+<hr />
+<h2 id="15">Реализация требований на 15 баллов</h2>
+<ul>
+<li>Регистрация и авторизация пользователей.</li>
+<li>Генерация JWT токена.</li>
+<li>Аутентификация по JWT (через dependency <code>get_current_user</code>).</li>
+<li>Хэширование паролей.</li>
+<li>API для:</li>
+<li>информации о текущем пользователе,</li>
+<li>списка пользователей,</li>
+<li>получения пользователя по ID,</li>
+<li>обновления пользователя,</li>
+<li>смены пароля.</li>
+</ul>
+<hr />
+<h2 id="_7">Миграции и окружение</h2>
+<ul>
+<li>Конфигурация Alembic: <code>alembic.ini</code>, <code>migrations/*</code>.</li>
+<li>Начальная миграция: <code>migrations/versions/0001_initial.py</code>.</li>
+<li>.env файл:</li>
+<li>исключение env: <code>.gitignore</code>,</li>
+<li>использование при чтении глобальных переменных.</li>
+</ul>
+<hr />
+<h2 id="_8">Вывод</h2>
+<p>В ходе выполнения лабораторной работы разработано серверное приложение — система тайм-менеджмента с авторизацией и управлением задачами.</p>
+<p>Спроектирована база данных на SQLite, реализована модульная структура FastAPI с разделением на модели, схемы, роутеры и зависимости. Создана система аутентификации: регистрация, JWT-токены, хэширование паролей. Написаны CRUD-операции для всех сущностей с фильтрацией, назначением пользователей и тегами. Выполнены миграции через Alembic, настроено окружение через <code>.env</code>. Подготовлена документация в MkDocs с деплоем на GitHub Pages.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
