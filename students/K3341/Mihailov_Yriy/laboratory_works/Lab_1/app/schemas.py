@@ -89,8 +89,7 @@ class TaskBase(SQLModel):
 
 
 class TaskCreate(TaskBase):
-    tag_ids: Optional[List[int]] = None
-    assigned_user_ids: Optional[List[int]] = None
+    pass
 
 
 class TaskUpdate(SQLModel):
@@ -101,16 +100,12 @@ class TaskUpdate(SQLModel):
     status: Optional[TaskStatus] = None
     estimated_minutes: Optional[int] = None
     recurrence_rule: Optional[str] = None
-    tag_ids: Optional[List[int]] = None
-    assigned_user_ids: Optional[List[int]] = None
 
 
 class TaskResponse(TaskBase):
     id: int
     owner_user_id: int
     created_at: datetime
-    tags: List[TagResponse] = []
-    assigned_users: List["UserResponse"] = []
 
     class Config:
         from_attributes = True

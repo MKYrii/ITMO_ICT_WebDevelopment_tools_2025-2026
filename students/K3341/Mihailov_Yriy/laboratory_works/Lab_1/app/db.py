@@ -1,7 +1,12 @@
 from sqlmodel import SQLModel, Session, create_engine
+
 from app.core.config import DB_URL
 
-engine = create_engine(DB_URL, echo=True)
+_engine_kwargs: dict = {"echo": True}
+if DB_URL.startswith("sqlite"):
+    _engine_kwargs["connect_args"] = {"check_same_thread": False}
+
+engine = create_engine(DB_URL, **_engine_kwargs)
 
 
 def init_db() -> None:

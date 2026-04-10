@@ -5,7 +5,7 @@ from typing import List
 from app.db import get_session
 from app.dependencies import get_current_user
 from app.models import User, Task, UserTaskAssignment
-from app.schemas import TaskAssignmentCreate, TaskAssignmentResponse
+from app.schemas import TaskAssignmentCreate, TaskAssignmentResponse, UserResponse, TaskResponse
 
 router = APIRouter(prefix="/assignments", tags=["Assignments"])
 
@@ -16,7 +16,6 @@ def create_assignment(
         session: Session = Depends(get_session),
         current_user: User = Depends(get_current_user),
 ) -> TaskAssignmentResponse:
-    # Проверяем, что задача существует и принадлежит текущему пользователю
     task = session.get(Task, payload.task_id)
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
@@ -24,12 +23,10 @@ def create_assignment(
     if task.owner_user_id != current_user.id:
         raise HTTPException(status_code=403, detail="Only task owner can assign users")
 
-    # Проверяем, что пользователь существует
     user = session.get(User, payload.user_id)
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
 
-    # Проверяем, не существует ли уже назначение
     existing = session.exec(
         select(UserTaskAssignment).where(
             UserTaskAssignment.task_id == payload.task_id,
@@ -37,7 +34,7 @@ def create_assignment(
         )
     ).first()
     if existing:
-        raise HTTPException(status_code=400, detail="User already assigned to this task")
+        raise HTTPException(status_code=400, detail="User already assigned")
 
     assignment = UserTaskAssignment(
         task_id=payload.task_id,
@@ -50,12 +47,12 @@ def create_assignment(
     return assignment
 
 
-@router.get("/task/{task_id}", response_model=list[TaskAssignmentResponse])
-def get_task_assignments(
+@router.get("/task/{task_id}", response_model=List[UserResponse])
+def get_task_assignees(
         task_id: int,
         session: Session = Depends(get_session),
         current_user: User = Depends(get_current_user),
-) -> list[TaskAssignmentResponse]:
+) -> List[UserResponse]:
     task = session.get(Task, task_id)
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
@@ -66,59 +63,58 @@ def get_task_assignments(
     assignments = session.exec(
         select(UserTaskAssignment).where(UserTaskAssignment.task_id == task_id)
     ).all()
-    return assignments
+
+    users = []
+    for ass in assignments:
+        user = session.get(User, ass.user_id)
+        if user:
+            users.append(user)
+
+    return users
 
 
-@router.get("/user/{user_id}", response_model=list[TaskAssignmentResponse])
-def get_user_assignments(
+@router.get("/user/{user_id}", response_model=List[TaskResponse])
+def get_user_tasks(
         user_id: int,
         session: Session = Depends(get_session),
         current_user: User = Depends(get_current_user),
-) -> list[TaskAssignmentResponse]:
+) -> List[TaskResponse]:
     if current_user.id != user_id:
         raise HTTPException(status_code=403, detail="Cannot view other user's assignments")
 
     assignments = session.exec(
         select(UserTaskAssignment).where(UserTaskAssignment.user_id == user_id)
     ).all()
-    return assignments
+
+    tasks = []
+    for ass in assignments:
+        task = session.get(Task, ass.task_id)
+        if task:
+            tasks.append(task)
+
+    return tasks
 
 
-@router.patch("/{assignment_id}", response_model=TaskAssignmentResponse)
-def update_assignment_comment(
-        assignment_id: int,
-        comment: str,
+@router.delete("/{task_id}/{user_id}")
+def remove_assignment(
+        task_id: int,
+        user_id: int,
         session: Session = Depends(get_session),
         current_user: User = Depends(get_current_user),
-) -> TaskAssignmentResponse:
-    assignment = session.get(UserTaskAssignment, assignment_id)
+) -> dict:
+    task = session.get(Task, task_id)
+    if not task or task.owner_user_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Access denied")
+
+    assignment = session.exec(
+        select(UserTaskAssignment).where(
+            UserTaskAssignment.task_id == task_id,
+            UserTaskAssignment.user_id == user_id
+        )
+    ).first()
+
     if not assignment:
         raise HTTPException(status_code=404, detail="Assignment not found")
-
-    task = session.get(Task, assignment.task_id)
-    if task.owner_user_id != current_user.id:
-        raise HTTPException(status_code=403, detail="Only task owner can update assignments")
-
-    assignment.comment = comment
-    session.add(assignment)
-    session.commit()
-    session.refresh(assignment)
-    return assignment
-
-
-@router.delete("/{assignment_id}")
-def delete_assignment(
-        assignment_id: int,
-        session: Session = Depends(get_session),
-        current_user: User = Depends(get_current_user),
-):
-    assignment = session.get(UserTaskAssignment, assignment_id)
-    if not assignment:
-        raise HTTPException(status_code=404, detail="Assignment not found")
-
-    task = session.get(Task, assignment.task_id)
-    if task.owner_user_id != current_user.id:
-        raise HTTPException(status_code=403, detail="Only task owner can delete assignments")
 
     session.delete(assignment)
     session.commit()
