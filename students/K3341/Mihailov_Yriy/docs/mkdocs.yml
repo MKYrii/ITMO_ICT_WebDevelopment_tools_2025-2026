@@ -1,0 +1,9 @@
+site_name: ITMO Web Development Tools Reports
+site_description: Отчет по практикам и лабораторным работам
+theme:
+  name: material
+  language: ru
+nav:
+  - Главная: index.md
+  - Лабораторная работа №1:
+    - Тайм-менеджер: lab1.md
