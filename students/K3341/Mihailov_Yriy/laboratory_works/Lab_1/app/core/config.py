@@ -9,7 +9,7 @@ _env_path = _lab_root / ".env"
 
 def _default_sqlite_url() -> str:
     path = (_lab_root / "pr3.db").resolve()
-    return f"sqlite:///{path.as_posix()}"
+    return f"postgresql+psycopg://postgres:mysecretpassword@127.0.0.1:5433/itmo_db"
 
 
 # JWT and other keys from .env / environment (override OS for local dev)
