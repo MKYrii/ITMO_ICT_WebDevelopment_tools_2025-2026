@@ -116,6 +116,19 @@ class TaskListResponse(SQLModel):
     total: int
 
 
+class TagRead(SQLModel):
+    id: int
+    name: str
+    color: Optional[str]
+
+class TaskWithTagsResponse(TaskResponse):
+    tags: List[TagRead] = []
+
+class TaskListWithTagsResponse(SQLModel):
+    tasks: List[TaskWithTagsResponse]
+    total: int
+
+
 # ========== UserTaskAssignment Schemas ==========
 class TaskAssignmentCreate(SQLModel):
     task_id: int
